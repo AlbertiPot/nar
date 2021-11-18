@@ -27,4 +27,6 @@ painter gm_oct
 
     Dataset is in `json` format as well and an example is in `data/nasbench201_vertice_example.json`. Full dataset containing 15,625 networks is available from [Google Drive](https://drive.google.com/file/d/1MeYtWM2n-ZlUDvDyvby1lVj3hA71kZ28/view?usp=sharing) (68MB), the SHA256 is `e462fa2dbff708a0d8e3f8c2bdcd5d843355d9db01cb62c5532331ad0b8ca7af`.
 
-## Train and Search
+## Architecture encoding
+
+## Train and search
