@@ -2,9 +2,9 @@
 
 This repository contains PyTorch implementation of the NAR, including:
 
-* training code and sampling code for NAR.
-* detailed cell information datasets based on NAS-Bench-101 and NAS-Bench-201
-* architecture encoding code.
+* training code and sampling code for NAR. （soon）
+* detailed cell information datasets based on NAS-Bench-101 and NAS-Bench-201. (available now)
+* architecture encoding code. (available now)
 
 ![ranker](./ranker.png)
 painter gm_oct
