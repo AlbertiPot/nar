@@ -36,3 +36,5 @@ For NAS-Bench-101, each network is encoded into a tensor of $19\times7\times7$, 
 For NAS-Bench-201, each network is encoded into a tensor of $31\times4\times4$ the same way with the NAS-Bench-101. Since each vertice represents the sum of feature maps and is fixed as 4, each patch size has a fixed size of 4 as a result. Codes are in `architecture/arch_encode_201.py`
 
 ## Train and search
+
+The training and sampling codes will be released soon.
