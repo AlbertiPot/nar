@@ -7,7 +7,6 @@ This repository contains PyTorch implementation of the NAR, including:
 * architecture encoding code. (available now)
 
 ![ranker](./ranker.png)
-painter gm_oct
 
 ## Cell information datasets
 
