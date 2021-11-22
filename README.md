@@ -12,7 +12,7 @@ This repository contains PyTorch implementation of the NAR, including:
 
 1. Cell information for  NAS-Bench-101
 
-    The original [NAS-Bench-101](https://github.com/google-research/nasbench) dataset contains 423,624 unique cell-based neural networks nad each network is trained and evaluated on CIFAR-10 for 3 times. Each netowrk is represented by directed acyclic graphs (DAG) with up to 9 vertices and 7 edges. The valid operations at each vertex are "$3×3$ convolution", "$1×1$ convolution", and "$3×3$ max-pooling".
+    The original [NAS-Bench-101](https://github.com/google-research/nasbench) dataset contains 423,624 unique cell-based neural networks nad each network is trained and evaluated on CIFAR-10 for 3 times. Each netowrk is represented by directed acyclic graphs (DAG) with up to 9 vertices and 7 edges. The valid operations at each vertex are "3×3 convolution", "1×1 convolution", and "3×3 max-pooling".
   
     We calculate the *FLOPs and #parameters* for each **vertice (operation)** of each cell for all the architectures. The training, validation and testing accuracy, as well as the training time, are averaged from 3 runs of 108 epochs.
 
@@ -20,7 +20,7 @@ This repository contains PyTorch implementation of the NAR, including:
 
 2. Cell information for NAS-Bench-201
 
-    The original [NAS-Bench-201](https://github.com/D-X-Y/NAS-Bench-201) dataset contains 15,625 unique cell-based networks, trained and evaluated on CIFAR-10, CIFAR-100 and ImageNet-16-120. Each network is represented by DAG with 4 vertices and 5 edges. Differently, each edge is associated with a valid operation and each vertice represents the sum of the feature maps. The valid operations are "zeroize", "skip connection", "$1×1$ convolution", "$3×3$ convolution", and "$3×3$ average-pooling".
+    The original [NAS-Bench-201](https://github.com/D-X-Y/NAS-Bench-201) dataset contains 15,625 unique cell-based networks, trained and evaluated on CIFAR-10, CIFAR-100 and ImageNet-16-120. Each network is represented by DAG with 4 vertices and 5 edges. Differently, each edge is associated with a valid operation and each vertice represents the sum of the feature maps. The valid operations are "zeroize", "skip connection", "1×1 convolution", "3×3 convolution", and "3×3 average-pooling".
 
     We calculate the *FLOPs and #parameters* for each **edge (operation)** of each cell for all architectures trained on CIFAR-10, CIFAR-100, and ImageNet-16-120 for 200 epochs, respectively.
 
@@ -30,9 +30,9 @@ This repository contains PyTorch implementation of the NAR, including:
 
 The architecture encoding follows the feature tensor method proposed in [ReNAS](https://arxiv.org/abs/1910.01523). We release the implementation applied to our cell information datasets.
 
-For NAS-Bench-101, each network is encoded into a tensor of $19\times7\times7$, including one **vertice operation type matrix**, **FLOPs matrix** and **#parameters matrix** for each cell (total 9 cells) of all architectures with each matrix size of 7. For the case that vertices are less than 7, zero padding is applied to the corresponding rows and columns. Codes are in `architecture/arch_encode.py`.
+For NAS-Bench-101, each network is encoded into a tensor of 19×7×7, including one **vertice operation type matrix**, **FLOPs matrix** and **#parameters matrix** for each cell (total 9 cells) of all architectures with each matrix size of 7. For the case that vertices are less than 7, zero padding is applied to the corresponding rows and columns. Codes are in `architecture/arch_encode.py`.
 
-For NAS-Bench-201, each network is encoded into a tensor of $31\times4\times4$ the same way with the NAS-Bench-101. Since each vertice represents the sum of feature maps and is fixed as 4, each patch size has a fixed size of 4 as a result. Codes are in `architecture/arch_encode_201.py`
+For NAS-Bench-201, each network is encoded into a tensor of 31×4×4 the same way with the NAS-Bench-101. Since each vertice represents the sum of feature maps and is fixed as 4, each patch size has a fixed size of 4 as a result. Codes are in `architecture/arch_encode_201.py`
 
 ## Train and search
 
