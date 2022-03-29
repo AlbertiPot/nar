@@ -2,9 +2,9 @@
 
 This repository contains PyTorch implementation of the NAR, including:
 
-* training code and sampling code for NAR. （soon）
-* detailed cell information datasets based on NAS-Bench-101 and NAS-Bench-201. (available now)
-* architecture encoding code. (available now)
+* training code and sampling code for NAR.
+* detailed cell information datasets based on NAS-Bench-101 and NAS-Bench-201.
+* architecture encoding code.
 
 ![ranker](./ranker.png)
 
@@ -36,4 +36,12 @@ For NAS-Bench-201, each network is encoded into a tensor of 31×4×4 the same wa
 
 ## Train and search
 
-The training and sampling codes will be released soon.
+Take the training and testing on NAS-Bench-101 as example:
+
+1. To train the NAR on NAS-Bench-101, modified the experiments settings and hyperparameters in the `config.yml` file located in `./config/` dir and run:
+
+    `python train.py --config_file './config/config.yml' --data_path './data/nasbench101/nasbench_only108_with_vertex_flops_and_params.json' --save_dir './output'`
+
+2. To test the NAR on NAS-Bench-101, run:
+
+    `python test.py --config_file './config/config.yml' --data_path './data/nasbench101/nasbench_only108_with_vertex_flops_and_params.json' --save_dir './output/trained_model_dir' --checkpoint 'trained_model_ckp_name'  --seed 77777777 --save_file_name 'test.log'`
