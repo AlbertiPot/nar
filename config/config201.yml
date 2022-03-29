@@ -1,0 +1,70 @@
+arch: "NAR"
+
+exp_name: "n201_runtime_noisy05_exp_seed77777777"
+seed: 77777777
+
+is_cuda: True
+
+space: "nasbench201"
+network_type: "imagenet16"  # ['cifar10','cifar100','imagenet16']
+
+train_size: 1000
+val_size: 256
+drop_last: True
+data_loader_workers: 6
+train_batch_size: 128
+val_batch_size: 128
+
+start_epochs: 0
+ranker_epochs: 55
+sampler_epochs: 105
+validate_freq: 1
+
+strategy: "val_acc"
+
+bins: 5
+
+ranker:
+  n_tier: 5
+  n_arch_patch: 31
+  d_patch: 4
+  d_patch_vec: 128
+  d_model: 128
+  d_ffn_inner: 512
+  d_tier_prj_inner: 256
+  n_layers: 6
+  n_head: 4
+  d_k: 32
+  d_v: 32
+  dropout: 0.1
+  n_position: 200
+  d_val_acc_prj_inner: 1024
+  scale_prj: True
+
+aux_loss: True
+loss_factor: 1
+
+optimizer:
+  beta1: 0.9
+  beta2: 0.99
+  eps: 1.0e-9
+  weight_decay: 1.0e-2
+
+lr_scheduler:
+  lr_mul: 0.07
+  n_warmup_steps: 30
+
+sampler:
+  top_tier: 1
+  last_tier: 4
+  batch_factor: 0.1
+  reuse_step: 25
+  max_trails: 100
+  noisy_factor: 0.5
+  flops_kl_thred: 0.35
+  params_kl_thred: 0.3
+  edges_kl_thred: 1.5
+  sample_size: 128
+  search_size: 128
+  force_uniform: True
+  is_checkpoint: True
