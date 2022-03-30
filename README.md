@@ -12,7 +12,7 @@ This repository contains PyTorch implementation of the NAR, including:
 
 1. Cell information for  NAS-Bench-101
 
-    The original [NAS-Bench-101](https://github.com/google-research/nasbench) dataset contains 423,624 unique cell-based neural networks nad each network is trained and evaluated on CIFAR-10 for 3 times. Each netowrk is represented by directed acyclic graphs (DAG) with up to 9 vertices and 7 edges. The valid operations at each vertex are "3×3 convolution", "1×1 convolution", and "3×3 max-pooling".
+    The original [NAS-Bench-101](https://github.com/google-research/nasbench) dataset contains 423,624 unique cell-based neural networks nad each network is trained and evaluated on CIFAR-10 for 3 times. Each network is represented by directed acyclic graphs (DAG) with up to 9 vertices and 7 edges. The valid operations at each vertex are "3×3 convolution", "1×1 convolution", and "3×3 max-pooling".
   
     We calculate the *FLOPs and #parameters* for each **vertice (operation)** of each cell for all the architectures. The training, validation and testing accuracy, as well as the training time, are averaged from 3 runs of 108 epochs.
 
@@ -40,8 +40,8 @@ Take the training and testing on NAS-Bench-101 as example:
 
 1. To train the NAR on NAS-Bench-101, modified the experiments settings and hyperparameters in the `config.yml` file located in `./config/` dir and run:
 
-    `python train.py --config_file './config/config.yml' --data_path './data/nasbench101/nasbench_only108_with_vertex_flops_and_params.json' --save_dir './output'`
+    ```python train.py --config_file './config/config.yml' --data_path './data/nasbench101/nasbench_only108_with_vertex_flops_and_params.json' --save_dir './output'```
 
 2. To test the NAR on NAS-Bench-101, run:
 
-    `python test.py --config_file './config/config.yml' --data_path './data/nasbench101/nasbench_only108_with_vertex_flops_and_params.json' --save_dir './output/trained_model_dir' --checkpoint 'trained_model_ckp_name'  --seed 77777777 --save_file_name 'test.log'`
+    ```python test.py --config_file './config/config.yml' --data_path './data/nasbench101/nasbench_only108_with_vertex_flops_and_params.json' --save_dir './output/trained_model_dir' --checkpoint 'trained_model_ckp_name'  --seed 77777777 --save_file_name 'test.log'```
