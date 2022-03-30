@@ -38,10 +38,14 @@ For NAS-Bench-201, each network is encoded into a tensor of 31×4×4 the same wa
 
 Take the training and testing on NAS-Bench-101 as example:
 
-1. To train the NAR on NAS-Bench-101, modified the experiments settings and hyperparameters in the `config.yml` file located in `./config/` dir and run:
+1. To train the NAR on NAS-Bench-101, modified the experiments settings and hyperparameters in the `config.yml` file located in `./config` dir and run:
 
-    ```python train.py --config_file './config/config.yml' --data_path './data/nasbench101/nasbench_only108_with_vertex_flops_and_params.json' --save_dir './output'```
+    ```bash
+    python train.py --config_file './config/config.yml' --data_path './data/nasbench101/nasbench_only108_with_vertex_flops_and_params.json' --save_dir './output'
+    ```
 
 2. To test the NAR on NAS-Bench-101, run:
 
-    ```python test.py --config_file './config/config.yml' --data_path './data/nasbench101/nasbench_only108_with_vertex_flops_and_params.json' --save_dir './output/trained_model_dir' --checkpoint 'trained_model_ckp_name'  --seed 77777777 --save_file_name 'test.log'```
+    ```bash
+    python test.py --config_file './config/config.yml' --data_path './data/nasbench101/nasbench_only108_with_vertex_flops_and_params.json' --save_dir './output/trained_model_dir' --checkpoint 'trained_model_ckp_name'  --seed 77777777 --save_file_name 'test.log'
+    ```
