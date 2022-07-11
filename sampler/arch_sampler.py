@@ -6,8 +6,6 @@ Method: 1 sample target FLOPS and Parameters constraints according to top tier d
         3 Given the sampled n_nodes, sample edges and nodes type according to uniform distribution
         4 Check whether the sampled subnets satisfy the FLOPS and Parameters constraints
 
-        random包: https://docs.python.org/3/library/random.html
-
 input: 1 batch_statics_dict = 
         {
             'flops':[{tier1},{tier2},{tier3},{tier4},{tier5}]
