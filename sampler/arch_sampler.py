@@ -11,7 +11,7 @@ input: 1 batch_statics_dict =
             'flops':[{tier1},{tier2},{tier3},{tier4},{tier5}]
             'params':[{tier1},{tier2},{tier3},{tier4},{tier5}]
             'n_nodes':[{tier1},{tier2},{tier3},{tier4},{tier5}]
-            } # tier是counts_dict
+            }
 """
 import random
 
